@@ -6,30 +6,75 @@
         <div class="mb-4">
             <img src="./../../../assets/Images/hederlogo.png" height="50px">
         </div>
-        <div class="grid">
-            <div class="col">
-                <div class="mb-4">
-                    <input pInputText type="text" class="p-inputtext-sm w-20rem" placeholder="Name" />
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="grid">
+                <div class="col">
+                    <div class="mb-4">
+                        <input pInputText type="text" name="name" ngModel required class="p-inputtext-sm w-20rem"
+                            placeholder="Name" />
+                            <div *ngIf="registerForm.controls['name']?.invalid && (registerForm.controls['name']?.dirty || registerForm.controls['name']?.touched)">
+                                <div class="mt-1 text-sm text-orange-500" *ngIf="registerForm.controls['name']?.errors?.['required']">Name is required.</div>
+                              </div>                              
+                    </div>
+                    <div class="mb-4">
+                        <input pInputText type="email" name="email" ngModel required email
+                            class="p-inputtext-sm w-20rem" placeholder="Email" />
+                        <div
+                            *ngIf="registerForm.controls['email']?.invalid && (registerForm.controls['email']?.dirty || registerForm.controls['email']?.touched)">
+                            <span class="mt-2 text-sm text-orange-500"
+                                *ngIf="registerForm.controls['email']!.errors?.['required']">Email is required.</span>
+                            <span class="mt-2 text-sm text-orange-500"
+                                *ngIf="registerForm.controls['email']!.errors?.['email']">Invalid email format.</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <input pInputText type="email" class="p-inputtext-sm w-20rem" placeholder="Email" />
+                <div class="col">
+                    <div class="mb-4">
+                        <input pInputText type="text" name="mobileNumber" ngModel required pattern="[0-9]{10}"
+                            class="p-inputtext-sm w-20rem" placeholder="Mobile Number" />
+                        <div
+                            *ngIf="registerForm.controls['mobileNumber']?.invalid && (registerForm.controls['mobileNumber']?.dirty || registerForm.controls['mobileNumber']?.touched)">
+                            <span class="mt-2 text-sm text-orange-500"
+                                *ngIf="registerForm.controls['mobileNumber']!.errors?.['required']">Mobile Number is
+                                required.</span>
+                            <span class="mt-2 text-sm text-orange-500"
+                                *ngIf="registerForm.controls['mobileNumber']!.errors?.['pattern']">Invalid mobile number
+                                format.</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="pass_input">
+                            <input pInputText [type]="showPassword ? 'text' : 'password'"name="password" ngModel required minlength="6"
+                                class="p-inputtext-sm w-20rem" placeholder="Password" />
+                        </div>
+                        <div class="pass_icone">
+                            <i alt="show" class="fa fa-eye" (click)="showPassword = !showPassword"
+                                [class.hide]="showPassword"></i>
+                            <i alt="hide" class="fa fa-eye-slash" (click)="showPassword = !showPassword"
+                                [class.hide]="!showPassword"></i>
+                        </div>
+
+                        <div  class="mt-3" 
+                            *ngIf="registerForm.controls['password']?.invalid && (registerForm.controls['password']?.dirty || registerForm.controls['password']?.touched)">
+                            <span class="mt-2 text-sm text-orange-500"
+                                *ngIf="registerForm.controls['password']!.errors?.['required']">Password is
+                                required.</span>
+                            <span class="mt-2 text-sm text-orange-500"
+                                *ngIf="registerForm.controls['password']!.errors?.['minlength']">Password must be at
+                                least 6
+                                characters long.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="mb-4">
-                    <input pInputText type="text" class="p-inputtext-sm w-20rem" placeholder="MobileNumber" />
+            <div class="grid">
+                <div class="lg:col-7" style="display: grid;place-content: center;">
                 </div>
-                <div class="mb-4">
-                    <input pInputText type="password" class="p-inputtext-sm w-20rem" placeholder="Password" />
+                <div class="lg:col-5 text-right">
+                    <p-button [disabled]="registerForm.invalid ?? false" routerLink="/login" type="submit" size="small"
+                        label="Submit"></p-button>
                 </div>
             </div>
-        </div>
-        <div class="grid">
-            <div class="lg:col-7" style="display: grid;place-content: center;">
-            </div>
-            <div class="lg:col-5 text-right">
-                <p-button routerLink="/login" size="small" label="Submit"></p-button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>

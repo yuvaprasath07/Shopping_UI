@@ -11,6 +11,7 @@ import { RegisterComponent } from './Auth/register/register.component';
 import { LayoutComponent } from './layout/layout.component';
 import { PrimengModule } from './primengModule/primeng/primeng.module';
 import { MobileComponent } from './Category/mobile/mobile.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { MobileComponent } from './Category/mobile/mobile.component';
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    PrimengModule
+    PrimengModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

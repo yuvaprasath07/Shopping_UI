@@ -1,14 +1,62 @@
 .login-page {
-    display: grid;
-    place-content: center;
-    height: 100vh;
-    // background: url(./../../assets/images/RockMemorial.jpg);
-      background-size: cover;
-  }
-  .form {
-    background: #ffffff;
-    padding: 45px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    border-radius: 7px
-  }
-  
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-size: cover;
+}
+
+.form {
+  background: #ffffff;
+  padding: 45px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 7px
+}
+
+.hide {
+  display: none;
+}
+
+.inner-addon {
+  position: relative;
+}
+
+.inner-addon .far,
+.inner-addon .fas {
+  position: absolute;
+  padding: 10px 30px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.left-addon .far,
+.left-addon .fas {
+  left: 0px;
+}
+
+.right-addon .far,
+.right-addon .fas {
+  right: 0px;
+}
+
+.left-addon input {
+  padding-left: 30px;
+}
+
+.right-addon input {
+  padding-right: 30px;
+}
+.pass_input {
+
+  position: absolute;
+}
+.pass_icone {
+  position: relative;
+  left: 45%;
+  top: 55%;
+}
+.fa-eye{
+  margin-top: 14px;
+}
+.fa-eye-slash{
+  margin-top: 14px;
+}
