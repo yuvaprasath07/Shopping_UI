@@ -6,19 +6,21 @@
         <div class="mb-4">
             <img src="./../../../assets/Images/hederlogo.png" height="50px">
         </div>
-        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+        <form #registerForm="ngForm">
             <div class="grid">
                 <div class="col">
                     <div class="mb-4">
-                        <input pInputText type="text" name="name" ngModel required class="p-inputtext-sm w-20rem"
-                            placeholder="Name" />
-                            <div *ngIf="registerForm.controls['name']?.invalid && (registerForm.controls['name']?.dirty || registerForm.controls['name']?.touched)">
-                                <div class="mt-1 text-sm text-orange-500" *ngIf="registerForm.controls['name']?.errors?.['required']">Name is required.</div>
-                              </div>                              
+                        <input pInputText type="text" #name="ngModel" [(ngModel)]="model.name" name="name" ngModel
+                            required class="p-inputtext-sm w-20rem" placeholder="Name" />
+                        <div
+                            *ngIf="registerForm.controls['name']?.invalid && (registerForm.controls['name']?.dirty || registerForm.controls['name']?.touched)">
+                            <div class="mt-1 text-sm text-orange-500"
+                                *ngIf="registerForm.controls['name']?.errors?.['required']">Name is required.</div>
+                        </div>
                     </div>
                     <div class="mb-4">
-                        <input pInputText type="email" name="email" ngModel required email
-                            class="p-inputtext-sm w-20rem" placeholder="Email" />
+                        <input pInputText type="text" #email="ngModel" [(ngModel)]="model.email" name="email" ngModel
+                            required email class="p-inputtext-sm w-20rem" placeholder="Email" />
                         <div
                             *ngIf="registerForm.controls['email']?.invalid && (registerForm.controls['email']?.dirty || registerForm.controls['email']?.touched)">
                             <span class="mt-2 text-sm text-orange-500"
@@ -30,8 +32,9 @@
                 </div>
                 <div class="col">
                     <div class="mb-4">
-                        <input pInputText type="text" name="mobileNumber" ngModel required pattern="[0-9]{10}"
-                            class="p-inputtext-sm w-20rem" placeholder="Mobile Number" />
+                        <input pInputText type="text" #mobileNumber="ngModel" [(ngModel)]="model.mobileNumber"
+                            name="mobileNumber" ngModel required pattern="[0-9]{10}" class="p-inputtext-sm w-20rem"
+                            placeholder="Mobile Number" />
                         <div
                             *ngIf="registerForm.controls['mobileNumber']?.invalid && (registerForm.controls['mobileNumber']?.dirty || registerForm.controls['mobileNumber']?.touched)">
                             <span class="mt-2 text-sm text-orange-500"
@@ -44,7 +47,8 @@
                     </div>
                     <div class="mb-4">
                         <div class="pass_input">
-                            <input pInputText [type]="showPassword ? 'text' : 'password'"name="password" ngModel required minlength="6"
+                            <input pInputText [type]="showPassword ? 'text' : 'password'" #password="ngModel"
+                                [(ngModel)]="model.password" name="password" ngModel required minlength="6"
                                 class="p-inputtext-sm w-20rem" placeholder="Password" />
                         </div>
                         <div class="pass_icone">
@@ -54,7 +58,7 @@
                                 [class.hide]="!showPassword"></i>
                         </div>
 
-                        <div  class="mt-3" 
+                        <div class="mt-3"
                             *ngIf="registerForm.controls['password']?.invalid && (registerForm.controls['password']?.dirty || registerForm.controls['password']?.touched)">
                             <span class="mt-2 text-sm text-orange-500"
                                 *ngIf="registerForm.controls['password']!.errors?.['required']">Password is
@@ -68,13 +72,22 @@
                 </div>
             </div>
             <div class="grid">
+                <div class="col-4 flex">
+                    <p>You have Subscribe</p>
+                    <!-- .(onChange)="subscribe($event)" -->
+                    <p-checkbox name="groupname" [(ngModel)]="model.subscribe" [binary]="true" class="ml-3"></p-checkbox>
+                </div>
+            </div>
+            <div class="grid">
                 <div class="lg:col-7" style="display: grid;place-content: center;">
                 </div>
                 <div class="lg:col-5 text-right">
-                    <p-button [disabled]="registerForm.invalid ?? false" routerLink="/login" type="submit" size="small"
-                        label="Submit"></p-button>
+                    <p-button (onClick)="regdata()" [disabled]="registerForm.invalid ?? false"
+                        type="submit" size="small" label="Submit"></p-button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+<p-toast position="top-right"></p-toast>

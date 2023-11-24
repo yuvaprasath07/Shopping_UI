@@ -43,7 +43,9 @@ ul.topnav {
   justify-content: space-around;
 }
 
-ul.topnav li {float: left;}
+ul.topnav li {
+  float: left;
+}
 
 ul.topnav li a {
   display: block;
@@ -53,13 +55,28 @@ ul.topnav li a {
   cursor: pointer;
 }
 
+@media screen and (max-width: 680px) {
+  .heder {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+  }
 
+  .icons {
+    margin-top: 10%;
+  }
 
+  .search input {
+    margin-top: 15%;
+  }
 
+  .logo img {
+    margin-top: 20%;
+  }
 
-
-
-@media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
+  .topnav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
