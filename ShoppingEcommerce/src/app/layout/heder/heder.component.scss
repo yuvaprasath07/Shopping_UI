@@ -55,6 +55,16 @@ ul.topnav li a {
   cursor: pointer;
 }
 
+.username{
+  border: 3px solid #fff;
+    padding: 3px 8px;
+    border-radius: 21px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 680px) {
   .heder {
     display: flex;
