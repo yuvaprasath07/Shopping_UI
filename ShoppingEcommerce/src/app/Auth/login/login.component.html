@@ -1,56 +1,57 @@
-    <div class="login-page">
-        <div class="form text-center">
-            <div style="color:#0278FF;">
-                <h2 class="m-0 mb-3">LOGIN</h2>
-            </div>
-            <div class="mb-2">
-                <img src="/assets/Images/hederlogo.png" height="50px">
-            </div>
-            <form #userForm="ngForm" (ngSubmit)="onSubmit()">
-                <div class="mb-4">
-                    <input pInputText type="text" class="p-inputtext-sm w-20rem" id="email" name="email"
-                        [(ngModel)]="user.email" required email placeholder="Email" />
-                    <div class="mt-2"
-                        *ngIf="userForm.controls['email']?.invalid && (userForm.controls['email']?.dirty || userForm.controls['email']?.touched)">
-                        <span class="mt-2 text-sm text-orange-500"
-                            *ngIf="userForm.controls['email'].errors?.['required']">Email is required.</span>
-                        <span class="mt-2 text-sm text-orange-500"
-                            *ngIf="userForm.controls['email'].errors?.['email']">Invalid email format.</span>
-                    </div>
+<div class="login-page">
+    <div class="form text-center">
+        <div style="color:#0278FF;">
+            <h2 class="m-0 mb-3">LOGIN</h2>
+        </div>
+        <div class="mb-2">
+            <img src="/assets/Images/hederlogo.png" height="50px">
+        </div>
+        <form #userForm="ngForm">
+            <div class="mb-4">
+                <input pInputText type="text" class="p-inputtext-sm w-20rem" id="email" name="email"
+                    [(ngModel)]="user.email" required email placeholder="Email" />
+                <div class="mt-2"
+                    *ngIf="userForm.controls['email']?.invalid && (userForm.controls['email']?.dirty || userForm.controls['email']?.touched)">
+                    <span class="mt-2 text-sm text-orange-500"
+                        *ngIf="userForm.controls['email'].errors?.['required']">Email is required.</span>
+                    <span class="mt-2 text-sm text-orange-500"
+                        *ngIf="userForm.controls['email'].errors?.['email']">Invalid email format.</span>
                 </div>
-                <div class="mb-4">
-                    <div class="pass_input">
-                        <input pInputText [type]="showPassword ? 'text' : 'password'" class="p-inputtext-sm w-20rem"
-                            placeholder="Password" id="password" name="password" [(ngModel)]="user.password" required
-                            minlength="6" />
-                    </div>
-                    <div class="pass_icone">
-                        <i alt="show" class="fa fa-eye" (click)="showPassword = !showPassword"
-                            [class.hide]="showPassword"></i>
-                        <i alt="hide" class="fa fa-eye-slash" (click)="showPassword = !showPassword"
-                            [class.hide]="!showPassword"></i>
-                    </div>
-                    <div class="mt-3"
-                        *ngIf="userForm.controls['password']?.invalid && (userForm.controls['password']?.dirty || userForm.controls['password']?.touched)">
-                        <span class="mt-2 text-sm text-orange-500"
-                            *ngIf="userForm.controls['password'].errors?.['required']">Password is required.</span>
-                        <span class="mt-2 text-sm text-orange-500"
-                            *ngIf="userForm.controls['password'].errors?.['minlength']">Password must be at least 6
-                            characters long.</span>
-                    </div>
+            </div>
+            <div class="mb-4">
+                <div class="pass_input">
+                    <input pInputText [type]="showPassword ? 'text' : 'password'" class="p-inputtext-sm w-20rem"
+                        placeholder="Password" id="password" name="password" [(ngModel)]="user.password" required
+                        minlength="6" />
                 </div>
-            </form>
-            <!-- <div class="mb-4">
+                <div class="pass_icone">
+                    <i alt="show" class="fa fa-eye" (click)="showPassword = !showPassword"
+                        [class.hide]="showPassword"></i>
+                    <i alt="hide" class="fa fa-eye-slash" (click)="showPassword = !showPassword"
+                        [class.hide]="!showPassword"></i>
+                </div>
+                <div class="mt-3"
+                    *ngIf="userForm.controls['password']?.invalid && (userForm.controls['password']?.dirty || userForm.controls['password']?.touched)">
+                    <span class="mt-2 text-sm text-orange-500"
+                        *ngIf="userForm.controls['password'].errors?.['required']">Password is required.</span>
+                    <span class="mt-2 text-sm text-orange-500"
+                        *ngIf="userForm.controls['password'].errors?.['minlength']">Password must be at least 6
+                        characters long.</span>
+                </div>
+            </div>
+        </form>
+        <!-- <div class="mb-4">
                 <a class="cursor-pointer text-sm">Forgot Password</a>
             </div> -->
-            <div class="grid">
-                <div class="lg:col-7" style="display: grid;place-content: center;">
-                    <p class="m-0 text-xs">Create Account? <a routerLink="/Register">REGISTER</a></p>
-                </div>
-                <div class="lg:col-5 text-right">
-                    <p-button [disabled]="userForm.invalid ?? false" routerLink="/Layout" size="small"
-                        label="Login"></p-button>
-                </div>
+        <div class="grid">
+            <div class="lg:col-7" style="display: grid;place-content: center;">
+                <p class="m-0 text-xs">Create Account? <a class="ml-2" routerLink="/Register">REGISTER</a></p>
+            </div>
+            <div class="lg:col-5 text-right">
+                <p-button (onClick)="loginshopping()" [disabled]="userForm.invalid ?? false" size="small"
+                    label="Login"></p-button>
             </div>
         </div>
     </div>
+</div>
+<p-toast position="top-right"></p-toast>

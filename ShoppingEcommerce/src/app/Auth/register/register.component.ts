@@ -37,9 +37,9 @@ export class RegisterComponent implements OnInit {
           }, 1000);
         }
       },
-      error(err) {
-        console.log(err)
-      },
+      error: (error: any) => {
+        console.error('Error in loginshopping API:', error);
+      }
     })
   }
 

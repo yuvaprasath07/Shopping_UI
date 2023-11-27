@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 0px 25px;
-  height: 60px;
+  height: 55px;
   align-items: center;
 }
 
@@ -55,9 +55,10 @@ ul.topnav li a {
   cursor: pointer;
 }
 
+
 .username{
   border: 3px solid #fff;
-    padding: 3px 8px;
+    padding: 2px 7px;
     border-radius: 21px;
     font-weight: 700;
     color: #fff;

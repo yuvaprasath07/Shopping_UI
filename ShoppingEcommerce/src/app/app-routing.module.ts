@@ -15,7 +15,9 @@ const routes: Routes = [
     children: [
       { path: 'Mobile', component: MobileComponent }
     ]
-  }
+  },
+  { path: 'productAdd', loadChildren: () => import('./Admin/product-add/product-add.module').then(m => m.ProductAddModule) },
+ 
 ];
 
 @NgModule({
