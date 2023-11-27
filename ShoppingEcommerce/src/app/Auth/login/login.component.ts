@@ -26,6 +26,11 @@ export class LoginComponent implements OnInit {
       next: (res: any) => {
         if (res) {
           localStorage.setItem('token', res.message.token);
+          localStorage.setItem('user-type', res.message.role);
+          localStorage.setItem('id', res.message.id);
+          localStorage.setItem('name', res.message.name);
+          localStorage.setItem('mobileNumber', res.message.mobileNumber);
+          localStorage.setItem('email', res.message.email);
           if (res.code == 200) {
             this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Successfully Login' });
             setTimeout(() => {

@@ -14,7 +14,7 @@ import { MobileComponent } from './Category/mobile/mobile.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
-import { ProductAddModule } from './Admin/product-add/product-add.module';
+  
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,6 @@ import { ProductAddModule } from './Admin/product-add/product-add.module';
     AppRoutingModule,
     ButtonModule,
     PrimengModule,
-    ProductAddModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule

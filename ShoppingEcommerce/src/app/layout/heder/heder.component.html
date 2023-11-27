@@ -1,6 +1,6 @@
 <div class="heder">
   <div class="logo">
-    <a><img src="/assets/Images/hederlogo.png" width="50px"></a>
+    <a><img src="./../../../assets/Images/happyshopping.png"></a>
   </div>
   <div class="search">
     <form>
@@ -10,7 +10,7 @@
   <div class="icons">
     <a class="fa fa-heart m-1"></a>
     <a class="fa fa-shopping-cart m-1"></a>
-    <a class="m-3 cursor-pointer" style="color: #fff;">Product Add</a>
+    <a class="m-3 cursor-pointer" style="color: #fff;" *ngIf="usertype==='admin'">Product Add</a>
     <a class="m-1 username">A</a>
     <a (click)="logout()" class="m-1 fa fa-sign-out" style="color: #fff;"></a>
   </div>
@@ -26,4 +26,3 @@
     <li><a>Furniture</a></li>
   </ul>
 </div>
-

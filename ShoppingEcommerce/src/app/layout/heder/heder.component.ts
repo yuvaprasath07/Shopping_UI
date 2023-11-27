@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-heder',
@@ -6,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heder.component.scss']
 })
 export class HederComponent implements OnInit {
-  constructor() { }
+
+  usertype: string | any = localStorage.getItem("user-type")
+  constructor(private route: Router) { }
+
   ngOnInit(): void {
 
   }
 
   logout() {
-
+    localStorage.clear();
+    this.route.navigate(["/login"]);
   }
 }

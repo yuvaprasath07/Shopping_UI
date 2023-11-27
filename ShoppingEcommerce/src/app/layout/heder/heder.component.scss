@@ -41,6 +41,7 @@ ul.topnav {
   display: flex;
   justify-content: space-around;
   border-radius: 8px;
+  padding: 4px;
 }
 
 ul.topnav li {
@@ -71,7 +72,7 @@ ul.topnav li a {
   .heder {
     display: flex;
     flex-direction: column;
-    height: 30vh;
+    height: 40vh;
   }
 
   .icons {
@@ -89,6 +90,5 @@ ul.topnav li a {
   .topnav {
     display: flex;
     flex-direction: column;
-    width: 100%;
   }
 }
