@@ -4,6 +4,7 @@ import { LoginComponent } from './Auth/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { RegisterComponent } from './Auth/register/register.component';
 import { MobileComponent } from './Category/mobile/mobile.component';
+import { authGuardGuard } from './Helper/auth-guard.guard';
 
 
 const routes: Routes = [
@@ -14,9 +15,8 @@ const routes: Routes = [
     path: 'Layout', component: LayoutComponent,
     children: [
       { path: 'Mobile', component: MobileComponent }
-    ]
+    ],canActivate: [authGuardGuard]
   },
-  { path: 'productAdd', loadChildren: () => import('./Admin/product-add/product-add.module').then(m => m.ProductAddModule) },
  
 ];
 

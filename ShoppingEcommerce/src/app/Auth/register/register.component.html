@@ -74,8 +74,10 @@
             <div class="grid">
                 <div class="col-4 flex">
                     <p>You have Subscribe</p>
-                    <!-- .(onChange)="subscribe($event)" -->
                     <p-checkbox name="groupname" [(ngModel)]="model.subscribe" [binary]="true" class="ml-3"></p-checkbox>
+                </div>
+                <div class="col-5">
+                    <p class="mt-3">Back to Login<a class="ml-2" routerLink="/login">Login</a></p>
                 </div>
             </div>
             <div class="grid">

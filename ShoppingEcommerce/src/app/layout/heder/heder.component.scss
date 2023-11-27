@@ -36,11 +36,11 @@
 ul.topnav {
   list-style-type: none;
   margin: 1%;
-  padding: 1%;
   overflow: hidden;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   justify-content: space-around;
+  border-radius: 8px;
 }
 
 ul.topnav li {
@@ -53,6 +53,7 @@ ul.topnav li a {
   padding: 14px 16px;
   text-decoration: none;
   cursor: pointer;
+  margin-left: 16px;
 }
 
 

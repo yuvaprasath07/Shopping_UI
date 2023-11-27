@@ -25,15 +25,15 @@ export class LoginComponent implements OnInit {
     this.api.loginshopping(body).subscribe({
       next: (res: any) => {
         if (res) {
-          localStorage.setItem('token', res.token);
+          localStorage.setItem('token', res.message.token);
           if (res.code == 200) {
             this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Successfully Login' });
             setTimeout(() => {
               this.router.navigate(['/Layout']);
             }, 1000);
-          } else {
-            this.messageservice.add({ severity: 'error', summary: 'Error', detail: 'Login Failed' });
           }
+        } else {
+          this.messageservice.add({ severity: 'error', summary: 'Error', detail: 'Login Failed' });
         }
       },
       error: (error: any) => {
