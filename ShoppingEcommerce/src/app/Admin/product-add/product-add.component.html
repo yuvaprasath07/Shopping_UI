@@ -1,1 +1,60 @@
-<p>product-add works!</p>
+<div class="admin-page">
+    <div class="form text-center">
+        <div>
+            <img src="/assets/Images/productadd.png" width="80px">
+        </div>
+        <div class="mt-2">
+            <img src="/assets/Images/happyshopping.png" height="35px">
+        </div>
+        <form #addform="ngForm">
+            <div class="grid mt-3">
+                <div class="col-6">
+                    <input autocomplete="off" id="Price" name="Price" [(ngModel)]="productadd.Price" required Price
+                        pInputText type="text" class="p-inputtext-sm w-20rem" placeholder="Price" />
+                    <div class="mt-2"
+                        *ngIf="addform.controls['Price']?.invalid && (addform.controls['Price']?.dirty || addform.controls['Price']?.touched)">
+                        <span class="mt-2 text-sm text-orange-500"
+                            *ngIf="addform.controls['Price'].errors?.['required']">Price is required.</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <input autocomplete="off" id="Model" name="Model" [(ngModel)]="productadd.Model" required Model
+                        pInputText type="text" class="p-inputtext-sm w-20rem" placeholder="Model" />
+                    <div class="mt-2"
+                        *ngIf="addform.controls['Model']?.invalid && (addform.controls['Model']?.dirty || addform.controls['Model']?.touched)">
+                        <span class="mt-2 text-sm text-orange-500"
+                            *ngIf="addform.controls['Model'].errors?.['required']">Model is required.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid mt-3">
+                <div class="col-6">
+                    <p-dropdown id="Category" name="Category" [(ngModel)]="productadd.Category" Category
+                        class="p-inputtext-sm" [showClear]="true" [style]="{'minWidth':'50px', 'width': '100%'}"
+                        placeholder="Select a Category"></p-dropdown>
+                </div>
+                <div class="col-6">
+                    <textarea id="Description" name="Description" [(ngModel)]="productadd.Description" required
+                        Description rows="1" cols="30" placeholder="Description" pInputTextarea></textarea>
+                    <div class="mt-2"
+                        *ngIf="addform.controls['Description']?.invalid && (addform.controls['Description']?.dirty || addform.controls['Description']?.touched)">
+                        <span class="mt-2 text-sm text-orange-500"
+                            *ngIf="addform.controls['Description'].errors?.['required']">Description is required.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid mt-3">
+                <div class="col-6">
+                    <p-fileUpload [style]="{'minWidth':'50px', 'width': '100%'}" class="file-upload-btn" mode="basic"
+                        name="demo[]" accept="image/*" [auto]="true" chooseLabel="Upload"></p-fileUpload>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-2">
+                    <button pButton (click)="productsubmit()" label="Submit" [disabled]="addform.invalid ?? false"
+                        class="submit_btn"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<p-toast position="top-right"></p-toast>

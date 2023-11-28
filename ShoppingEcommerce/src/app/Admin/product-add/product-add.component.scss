@@ -1,0 +1,19 @@
+.admin-page {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background: url(./../../../assets/Images/productadd_bac.webp);
+    background-size: cover;
+}
+
+.form {
+    background: #ffffff;
+    padding: 45px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 7px
+}
+
+.submit_btn {
+    padding: 9px 19px;
+    border-radius: 5px;
+}
