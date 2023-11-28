@@ -4,11 +4,11 @@
             <h3 class="m-0 mb-3">LOGIN</h3>
         </div>
         <div class="mb-3">
-            <img src="./../../../assets/Images/happyshopping.png" height="35px">
+            <img src="/assets/Images/happyshopping.png" height="35px">
         </div>
         <form #userForm="ngForm">
             <div class="mb-4">
-                <input pInputText type="text" class="p-inputtext-sm w-20rem" id="email" name="email"
+                <input autocomplete="off" pInputText type="text" class="p-inputtext-sm w-20rem" id="email" name="email"
                     [(ngModel)]="user.email" required email placeholder="Email" />
                 <div class="mt-2"
                     *ngIf="userForm.controls['email']?.invalid && (userForm.controls['email']?.dirty || userForm.controls['email']?.touched)">
@@ -20,7 +20,7 @@
             </div>
             <div class="mb-4">
                 <div class="pass_input">
-                    <input pInputText [type]="showPassword ? 'text' : 'password'" class="p-inputtext-sm w-20rem"
+                    <input autocomplete="off" pInputText [type]="showPassword ? 'text' : 'password'" class="p-inputtext-sm w-20rem"
                         placeholder="Password" id="password" name="password" [(ngModel)]="user.password" required
                         minlength="6" />
                 </div>

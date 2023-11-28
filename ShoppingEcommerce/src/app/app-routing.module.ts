@@ -17,6 +17,7 @@ const routes: Routes = [
       { path: 'Mobile', component: MobileComponent }
     ], canActivate: [authGuard]
   },
+  { path: 'ProductAdd', loadChildren: () => import('./Admin/product-add/product-add.module').then(m => m.ProductAddModule) },
 
 ];
 

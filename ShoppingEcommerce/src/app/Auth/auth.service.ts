@@ -12,7 +12,7 @@ export class AuthService {
     return this.http.post("https://localhost:7209/api/Auth/AdminRegister", body)
   }
 
-  loginshopping(body:any){
-    return this.http.post("https://localhost:7209/api/Auth/login",body)
+  loginshopping(body: any) {
+    return this.http.post("https://localhost:7209/api/Auth/login", body)
   }
 }

@@ -23,8 +23,8 @@ export class RegisterComponent implements OnInit {
   regdata() {
     var body = {
       name: this.model.name,
-      mobilenumber: this.model.email,
-      email: this.model.mobileNumber,
+      mobilenumber: this.model.mobileNumber,
+      email: this.model.email,
       password: this.model.password,
       role: this.model.subscribe == true ? 'prime' : 'regular'
     }
