@@ -15,6 +15,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { ProductAddModule } from './Admin/product-add/product-add.module';
+import { MenClothesComponent } from './Category/men-clothes/men-clothes.component';
+import { WomenClothesComponent } from './Category/women-clothes/women-clothes.component';
+import { ElectronicsComponent } from './Category/electronics/electronics.component';
+import { SportsComponent } from './Category/sports/sports.component';
+import { FurnitureComponent } from './Category/furniture/furniture.component';
   
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { ProductAddModule } from './Admin/product-add/product-add.module';
     RegisterComponent,
     LayoutComponent,
     MobileComponent,
+    MenClothesComponent,
+    WomenClothesComponent,
+    ElectronicsComponent,
+    SportsComponent,
+    FurnitureComponent,
   ],
   imports: [
     BrowserModule,

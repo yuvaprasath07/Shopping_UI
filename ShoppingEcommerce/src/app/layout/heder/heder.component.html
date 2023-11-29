@@ -13,16 +13,16 @@
     <a class="m-3 cursor-pointer" routerLink="/ProductAdd" style="color: #fff;text-decoration: none;"
       *ngIf="usertype==='Admin'">Product Add</a>
     <a class="m-1 username">{{username|uppercase}}</a>
-    <a (click)="logout()" class="m-1 fa fa-sign-out"  style="color: #fff;"></a>
+    <a (click)="logout()" class="m-1 fa fa-sign-out" style="color: #fff;"></a>
   </div>
 </div>
 <div class="categry">
   <ul class="topnav">
     <li><a routerLink="/Layout/Mobile">Mobiles</a></li>
-    <li><a>Men Clothes</a></li>
-    <li><a>Women Clothes</a></li>
-    <li><a>Electronics</a></li>
-    <li><a>Sports</a></li>
-    <li><a>Furniture</a></li>
+    <li><a routerLink="/Layout/Men-Clothes">Men Clothes</a></li>
+    <li><a routerLink="/Layout/Women-Clothes">Women Clothes</a></li>
+    <li><a routerLink="/Layout/Electronics">Electronics</a></li>
+    <li><a routerLink="/Layout/Sports">Sports</a></li>
+    <li><a routerLink="/Layout/Furniture">Furniture</a></li>
   </ul>
 </div>
