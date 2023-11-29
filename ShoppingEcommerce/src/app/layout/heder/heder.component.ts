@@ -10,11 +10,9 @@ import { ProductService } from '../ProductService/product.service';
 export class HederComponent implements OnInit {
   username: string | null = null;
   usertype: string | any = localStorage.getItem("user-type")
-  productget: any = [];
-  constructor(private route: Router, public api: ProductService) { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
-    this.categroyGet();
     const storedValue = localStorage.getItem('name');
     this.username = storedValue ? storedValue.charAt(0) : null;
   }
@@ -24,17 +22,6 @@ export class HederComponent implements OnInit {
     this.route.navigate(["/login"]);
   }
 
-  categroyGet() {
-    debugger
-    this.api.productGet().subscribe({
-      next: (res: any) => {
-        res.forEach((element:any) => {
-          if(element.category=="1"){
-            this.productget.push(element);
-          }
-        });
-      }
-    })
-  }
+
 
 }

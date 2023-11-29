@@ -1,19 +1,12 @@
-<p-card header=" ‎₹27,380.00 " subheader="Galaxy S20 FE 5G" [style]="{ width: '300px' }">
-    <ng-template pTemplate="header">
-        <img alt="Card" src="/assets/Images/mobile.jpg">
-    </ng-template>
-    <p>
-        USB Interface USB Type-C.
-        USB Version USB 3.2 Gen 1.
-        Location Technology GPS, Glonass, Beidou, Galileo.
-        Earjack USB Type-C.
-        MHL No.
-        Wi-Fi 802.11 a/b/g/n/ac/ax 2.4G+5GHz, HE80, MIMO, 1024-QAM.
-        Wi-Fi Direct Yes.
-        Bluetooth Version Bluetooth v5.0.
-    </p>
-    <ng-template pTemplate="footer">
-        <button pButton label="Addcart" class="addcart_btn"></button>
-        <button pButton label="BuyNow" class="buy_now" [style]="{ 'margin-left': '.5em' }"></button>
-    </ng-template>
-</p-card>
+<div *ngFor="let mobile of productgetmobile" class="card mt-1">
+    <div class="card-content">
+        <img class="image m-0" src="{{mobile.imagefilepath}}">
+        <h2 class="m-0">{{mobile.price}}</h2>
+        <h3 class="m-0 pt-2">{{mobile.model}}</h3>
+        <p class="m-0 pt-2">{{mobile.description}}</p>
+    </div>
+    <div class="mb-2">
+        <button pButton  label="Add cart" class="addcart_btn ml-2"></button>
+        <button pButton  label="Buy Now" class="addcart_btn ml-3"></button>
+    </div>
+</div>
