@@ -9,7 +9,7 @@
         <form #addform="ngForm">
             <div class="grid mt-3">
                 <div class="col-6">
-                    <input autocomplete="off" id="Price" name="Price" [(ngModel)]="productadd.Price" required Price
+                    <input autocomplete="off" id="Price"  #Price="ngModel" name="Price" [(ngModel)]="productadd.Price" required Price
                         pInputText type="text" class="p-inputtext-sm w-20rem" placeholder="Price" />
                     <div class="mt-2"
                         *ngIf="addform.controls['Price']?.invalid && (addform.controls['Price']?.dirty || addform.controls['Price']?.touched)">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <input autocomplete="off" id="Model" name="Model" [(ngModel)]="productadd.Model" required Model
+                    <input autocomplete="off" id="Model"  #Model="ngModel" name="Model" [(ngModel)]="productadd.Model" required Model
                         pInputText type="text" class="p-inputtext-sm w-20rem" placeholder="Model" />
                     <div class="mt-2"
                         *ngIf="addform.controls['Model']?.invalid && (addform.controls['Model']?.dirty || addform.controls['Model']?.touched)">
@@ -29,12 +29,12 @@
             </div>
             <div class="grid mt-3">
                 <div class="col-6">
-                    <p-dropdown id="Category" name="Category" [(ngModel)]="productadd.Category" Category
+                    <p-dropdown id="Category"  [options]="categroylookup" optionValue="id" optionLabel="name"  #Category="ngModel" name="Category"  [(ngModel)]="productadd.Category"
                         class="p-inputtext-sm" [showClear]="true" [style]="{'minWidth':'50px', 'width': '100%'}"
                         placeholder="Select a Category"></p-dropdown>
                 </div>
                 <div class="col-6">
-                    <textarea id="Description" name="Description" [(ngModel)]="productadd.Description" required
+                    <textarea id="Description"  #Description="ngModel" name="Description"  [(ngModel)]="productadd.Description" required
                         Description rows="1" cols="30" placeholder="Description" pInputTextarea></textarea>
                     <div class="mt-2"
                         *ngIf="addform.controls['Description']?.invalid && (addform.controls['Description']?.dirty || addform.controls['Description']?.touched)">
@@ -45,12 +45,12 @@
             </div>
             <div class="grid mt-3">
                 <div class="col-6">
-                    <p-fileUpload [style]="{'minWidth':'50px', 'width': '100%'}" class="file-upload-btn" mode="basic"
-                        name="demo[]" accept="image/*" [auto]="true" chooseLabel="Upload"></p-fileUpload>
+                    <p-fileUpload (onSelect)="imgUpload($event)" id="selectedFilePath" name="selectedFilePath" #selectedFilePath="ngModel" [(ngModel)]="productadd.selectedFilePath"  [style]="{'minWidth':'50px', 'width': '100%'}" class="file-upload-btn" mode="basic"
+                        chooseLabel="Upload"></p-fileUpload>
                 </div>
                 <div class="col-4"></div>
                 <div class="col-2">
-                    <button pButton (click)="productsubmit()" label="Submit" [disabled]="addform.invalid ?? false"
+                    <button pButton (click)="productsubmit(productadd)" label="Submit" [disabled]="addform.invalid ?? false"
                         class="submit_btn"></button>
                 </div>
             </div>
