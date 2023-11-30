@@ -1,12 +1,14 @@
-<div *ngFor="let mobile of productgetmobile" class="card mt-1">
-    <div class="card-content">
-        <img class="image m-0" src="{{mobile.imagefilepath}}">
-        <h2 class="m-0">{{mobile.price}}</h2>
-        <h3 class="m-0 pt-2">{{mobile.model}}</h3>
-        <p class="m-0 pt-2">{{mobile.description}}</p>
-    </div>
-    <div class="mb-2">
-        <button pButton  label="Add cart" class="addcart_btn ml-2"></button>
-        <button pButton  label="Buy Now" class="addcart_btn ml-3"></button>
+<div class="grid m-0  column-gap-4">
+    <div *ngFor="let mobile of productgetmobile" class=":lg:col-4 card mt-1">
+        <div class="card-content">
+            <img class="image m-0" src="{{mobile.imagefilepath}}">
+            <h2 class="m-0"> ₹{{mobile.price}}</h2>
+            <h3 class="m-0 pt-2">{{mobile.model}}</h3>
+            <p class="m-0 pt-2">{{mobile.description}}</p>
+        </div>
+        <div class="mb-2">
+            <button pButton label="Add cart" class="addcart_btn ml-2"></button>
+            <button pButton label="Buy Now" class="addcart_btn ml-3"></button>
+        </div>
     </div>
 </div>

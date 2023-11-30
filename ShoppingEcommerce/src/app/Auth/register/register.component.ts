@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
 
   }
   regdata() {
+    debugger
     var body = {
       name: this.model.name,
       mobilenumber: this.model.mobileNumber,
@@ -35,6 +36,9 @@ export class RegisterComponent implements OnInit {
           setTimeout(() => {
             this.router.navigate(['/login']);
           }, 1000);
+        }
+        else {
+          this.messageservice.add({ severity: 'error', summary: 'Error', detail: 'Rgister Failed' });
         }
       },
       error: (error: any) => {

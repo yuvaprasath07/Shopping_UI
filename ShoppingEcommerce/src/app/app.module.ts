@@ -20,6 +20,7 @@ import { WomenClothesComponent } from './Category/women-clothes/women-clothes.co
 import { ElectronicsComponent } from './Category/electronics/electronics.component';
 import { SportsComponent } from './Category/sports/sports.component';
 import { FurnitureComponent } from './Category/furniture/furniture.component';
+import { AddcartComponent } from './Addcart/addcart/addcart.component';
   
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FurnitureComponent } from './Category/furniture/furniture.component';
     ElectronicsComponent,
     SportsComponent,
     FurnitureComponent,
+    AddcartComponent,
   ],
   imports: [
     BrowserModule,

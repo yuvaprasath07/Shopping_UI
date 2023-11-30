@@ -9,7 +9,7 @@ export class AuthService {
   constructor(public http: HttpClient) { }
 
   registerShopping(body: any) {
-    return this.http.post("https://localhost:7209/api/Auth/AdminRegister", body)
+    return this.http.post("https://localhost:7209/api/Auth/Register", body)
   }
 
   loginshopping(body: any) {
