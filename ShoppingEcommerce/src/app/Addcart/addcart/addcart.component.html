@@ -1,8 +1,8 @@
 <div class="p-4">
-    <p-table   styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '40rem' }">
+    <p-table [value]="productget"  styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '40rem' }">
         <ng-template pTemplate="header">
             <tr>
-                <th class="text-center">NO</th>
+                <th class="text-center">UserName</th>
                 <th class="text-center">IMAGE</th>
                 <th class="text-center">PRICE</th>
                 <th class="text-center">PRODUCT NAME</th>
@@ -12,11 +12,11 @@
         </ng-template>
         <ng-template pTemplate="body" let-product>
             <tr>
-                <td>1</td>
-                <td><img src="./../../../assets/Images/bigsale.avif"></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{product.name}}</td>
+                <td class="text-center" ><img class="image" src="{{product.imagefilepath}}"></td>
+                <td>{{product.price}}</td>
+                <td>{{product.model}}</td>
+                <td>{{product.description}}</td>
                 <td></td>
             </tr>
         </ng-template>

@@ -57,15 +57,20 @@ ul.topnav li a {
   margin-left: 16px;
 }
 
+.star_image {
+  position: absolute;
+  right: 75px;
+}
 
-.username{
+.username {
   border: 2px solid #fff;
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: 21px;
   font-weight: 700;
   color: #fff;
   font-size: 15px;
   cursor: pointer;
+  position: relative;
 }
 
 @media screen and (max-width: 680px) {

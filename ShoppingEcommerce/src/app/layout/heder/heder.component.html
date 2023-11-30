@@ -12,6 +12,7 @@
     <a class="fa fa-shopping-cart m-1" routerLink="/Addcart"></a>
     <a class="m-3 cursor-pointer" routerLink="/ProductAdd" style="color: #fff;text-decoration: none;"
       *ngIf="usertype==='Admin'">Product Add</a>
+    <img *ngIf="usertype==='prime'" class="star_image" src="/assets/Images/star.png" width="14px">
     <a class="m-1 username">{{username|uppercase}}</a>
     <a (click)="logout()" class="m-1 fa fa-sign-out" style="color: #fff;"></a>
   </div>
