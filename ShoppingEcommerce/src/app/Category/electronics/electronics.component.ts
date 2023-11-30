@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { ProductService } from 'src/app/layout/ProductService/product.service';
 
 @Component({
@@ -10,7 +12,7 @@ export class ElectronicsComponent implements OnInit {
   productgetelectronics: any = [];
   userid = localStorage.getItem("id");
   productcartid: any
-  constructor(public api: ProductService) { }
+  constructor(public api: ProductService, private messageservice: MessageService, private router: Router) { }
 
   ngOnInit(): void {
     this.categroyGet();
@@ -29,13 +31,24 @@ export class ElectronicsComponent implements OnInit {
   }
 
   addcart() {
-    debugger
     var body = {
       productcartid: this.productcartid,
       userid: this.userid
     }
     this.api.cartadd(body).subscribe({
       next: (res: any) => {
+        if (res.code == 200) {
+          this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Successfully Add cart' });
+          setTimeout(() => {
+            this.router.navigate(['/Addcart']);
+          }, 1000);
+        }
+        else {
+          this.messageservice.add({ severity: 'error', summary: 'Error', detail: 'Failed' });
+        }
+      },
+      error: (error: any) => {
+        console.log('Error in loginshopping API:', error);
       }
     })
   }
