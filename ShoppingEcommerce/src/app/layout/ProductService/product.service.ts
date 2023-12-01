@@ -12,7 +12,9 @@ export class ProductService {
     return this.http.get("https://localhost:7209/api/AdminProductadd/productGet")
   }
 
-  cartadd(body:any){
-    return this.http.post("https://localhost:7209/api/Addcart/productAddcart",body)
+  cartadd(body: any) {
+    return this.http.post("https://localhost:7209/api/Addcart/productAddcart", body)
   }
+
+
 }

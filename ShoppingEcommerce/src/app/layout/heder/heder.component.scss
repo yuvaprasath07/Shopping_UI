@@ -1,5 +1,5 @@
 .heder {
-  background-color: #952BF7;
+  background-color: #F0EDE6;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 0px 25px;
@@ -26,7 +26,7 @@
 }
 
 .icons .fa {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   font-size: 22px;
   padding: 0px 10px;
@@ -63,11 +63,11 @@ ul.topnav li a {
 }
 
 .username {
-  border: 2px solid #fff;
+  border: 2px solid #000000;
   padding: 3px 8px;
   border-radius: 21px;
   font-weight: 700;
-  color: #fff;
+  color: #000000;
   font-size: 15px;
   cursor: pointer;
   position: relative;

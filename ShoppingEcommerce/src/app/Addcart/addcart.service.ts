@@ -8,7 +8,12 @@ export class AddcartService {
 
   constructor(public http: HttpClient) { }
 
-  getCart(){
+  getCart() {
     return this.http.get("https://localhost:7209/api/Addcart/GetCard")
   }
+
+  deletecart(id: any) {
+    return this.http.delete("https://localhost:7209/api/Addcart/Deletecart/", id);
+  }
+
 }
